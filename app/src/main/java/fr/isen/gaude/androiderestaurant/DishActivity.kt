@@ -2,6 +2,7 @@ package fr.isen.gaude.androiderestaurant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.gaude.androiderestaurant.databinding.ActivityDishBinding
@@ -16,7 +17,10 @@ class DishActivity : AppCompatActivity() {
         binding = ActivityDishBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_dish)
 
-        binding.mainDishTitle.text = intent.getStringExtra("category_type")
+        val category = intent.getStringExtra("category_type")
+        findViewById<TextView>(R.id.mainDishTitle).text = category
+
+        //binding.mainDishTitle.text = intent.getStringExtra("category_type")
 
         binding.dishList.layoutManager = LinearLayoutManager(this)
 
