@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
+import android.widget.Toast
 import fr.isen.gaude.androiderestaurant.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -14,30 +14,66 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val view = binding.root
+        setContentView(view)
 
 
-        binding.Appetizers.text = getString(R.string.home_starters)
-        binding.MainDish.text = getString(R.string.home_main_dishes)
-        binding.Dessert.text = getString(R.string.home_desserts)
+        val tvStarter = binding.Appetizers
+        val tvMainCourse = binding.MainDish
+        val tvDesserts = binding.Dessert
 
-        binding.Appetizers.setOnClickListener{
-            changeActivity(getString(R.string.home_starters))
+
+        // set on-click listener
+        tvStarter.setOnClickListener {
+            val str : String = tvStarter.getText().toString()
+            // your code to perform when the user clicks on the TextView
+            Toast.makeText(this@HomeActivity, "You clicked on Starters.", Toast.LENGTH_SHORT).show()
+            //Log.w("home activity", "je suis passé par ici")
+            Log.i("info","end of Home Activity")
+            changeActivityWithCategory(str)
+
+        }
+        tvMainCourse.setOnClickListener {
+            val str: String = tvMainCourse.getText().toString()
+            // your code to perform when the user clicks on the TextView
+            Toast.makeText(this@HomeActivity, "You clicked on Main courses.", Toast.LENGTH_SHORT).show()
+            //Log.w("home activity", "je suis passé par ici")
+            Log.i("info","end of Home Activity")
+            changeActivityWithCategory(str)
+
+        }
+        tvDesserts.setOnClickListener {
+            val str :String = tvDesserts.getText().toString()
+            // your code to perform when the user clicks on the TextView
+            Toast.makeText(this@HomeActivity, "You clicked on Dessert.", Toast.LENGTH_SHORT).show()
+            //Log.w("home activity", "je suis passé par ici")
+            Log.i("info","end of Home Activity")
+            changeActivityWithCategory(str)
+
+
         }
 
-        binding.MainDish.setOnClickListener{
-            changeActivity(getString(R.string.home_main_dishes))
-        }
 
-        binding.Dessert.setOnClickListener{
-            changeActivity(getString(R.string.home_desserts))
-        }
+
     }
 
-    private fun changeActivity( category: String ) {
-        val changePage = Intent(this@HomeActivity, DishActivity::class.java)
-        changePage.putExtra("category_type",category)
-        Log.i("INFO", "End of HomeActivity")
-        startActivity(changePage)
+
+    private fun changeActivityWithCategory(str : String) {
+
+
+        val monIntent : Intent =  Intent(this,DishActivity::class.java)
+        monIntent.putExtra("selectedCategory", str)
+        startActivity(monIntent)
+
+
     }
+
+
+
+
+
+
+
 }
+
+
