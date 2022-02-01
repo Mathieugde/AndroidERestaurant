@@ -63,7 +63,7 @@ class DishActivity : AppCompatActivity(), CellClickListener {
                 Log.d("", "$response")
             }, {
                 // Error in request
-                Log.i("","Volley error: $it")
+                Log.e("","Volley error: $it")
             })
 
         // Volley request policy, only one time request to avoid duplicate transaction

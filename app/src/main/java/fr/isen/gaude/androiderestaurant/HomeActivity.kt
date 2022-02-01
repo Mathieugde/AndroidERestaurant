@@ -27,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         tvStarter.setOnClickListener {
             val str : String = tvStarter.getText().toString()
             // your code to perform when the user clicks on the TextView
-            Toast.makeText(this@HomeActivity, "You clicked on Starters.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@HomeActivity, "You clicked on Appetizers.", Toast.LENGTH_SHORT).show()
             //Log.w("home activity", "je suis passé par ici")
             Log.i("info","end of Home Activity")
             changeActivityWithCategory(str)
@@ -36,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
         tvMainCourse.setOnClickListener {
             val str: String = tvMainCourse.getText().toString()
             // your code to perform when the user clicks on the TextView
-            Toast.makeText(this@HomeActivity, "You clicked on Main courses.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@HomeActivity, "You clicked on Main Dishes.", Toast.LENGTH_SHORT).show()
             //Log.w("home activity", "je suis passé par ici")
             Log.i("info","end of Home Activity")
             changeActivityWithCategory(str)
