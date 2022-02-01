@@ -29,9 +29,9 @@ class DishAdapter(private val mList: List<DishModel>, private val cellClickListe
 
         val dish = mList[position]
 
-        if(dish.images[0]!="") {
+        if(dish.pictures[0]!="") {
             Picasso.get()
-                .load(dish.images[0])
+                .load(dish.pictures[0])
                 .error(R.drawable.pizza)
                 .into(holder.itemImage)
 

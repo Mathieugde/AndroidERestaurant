@@ -99,7 +99,7 @@ class DishActivity : AppCompatActivity(), CellClickListener {
 
     override fun onCellClickListener(data: DishModel) {
         val monIntent : Intent =  Intent(this,DetailActivity::class.java)
-        monIntent.putExtra("itemDish", data)
+        monIntent.putExtra("dish", data)
         startActivity(monIntent)
     }
 
