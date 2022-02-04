@@ -7,81 +7,66 @@
     tools:context=".HomeActivity">
 
     <Button
-        android:id="@+id/Appetizers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:id="@+id/appetizers"
+        android:layout_width="131dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="224dp"
         android:text="Entrées"
-        app:iconTint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/MainDish"
-        app:layout_constraintEnd_toEndOf="@+id/MainDish"
-        app:layout_constraintStart_toStartOf="@+id/MainDish"
-        app:rippleColor="#FFFFFF" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/MainDish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:text="Plats"
-        app:layout_constraintBottom_toTopOf="@+id/Dessert"
-        app:layout_constraintEnd_toEndOf="@+id/Dessert"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/Dessert" />
-
-    <Button
-        android:id="@+id/Dessert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="88dp"
+        android:id="@+id/desserts"
+        android:layout_width="131dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="12dp"
         android:text="Desserts"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_courses" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="178dp"
-        android:layout_marginBottom="636dp"
-        android:fontFamily="monospace"
-        android:text="Bienvenue chez"
-        android:textColor="#9F1616"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/main_courses"
+        android:layout_width="131dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="20dp"
+        android:text="Plats"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appetizers" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="139dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="597dp"
-        android:fontFamily="cursive"
-        android:text="@string/app_name"
-        android:textColor="#9F1616"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="Bienvenue dans votre E-Restaurant"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/appetizers"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <ImageView
-        android:id="@+id/dishPicture"
-        android:layout_width="266dp"
-        android:layout_height="187dp"
-        android:layout_marginStart="89dp"
-        android:layout_marginEnd="89dp"
-        android:layout_marginBottom="392dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/pizza" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

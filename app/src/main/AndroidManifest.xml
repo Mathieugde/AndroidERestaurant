@@ -13,13 +13,16 @@
         android:theme="@style/Theme.AndroidERestaurant"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".DishPictureAdapter"
+            android:name=".ConnectionActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".Basket.BasketActivity"
             android:exported="false" />
         <activity
-            android:name=".DishActivity"
+            android:name=".MealsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"

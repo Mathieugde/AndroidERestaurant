@@ -4,76 +4,47 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Toast
 import fr.isen.gaude.androiderestaurant.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
 
+        setContentView(binding.root)
 
-        val tvStarter = binding.Appetizers
-        val tvMainCourse = binding.MainDish
-        val tvDesserts = binding.Dessert
-
-
-        // set on-click listener
-        tvStarter.setOnClickListener {
-            val str : String = tvStarter.getText().toString()
-            // your code to perform when the user clicks on the TextView
-            Toast.makeText(this@HomeActivity, "You clicked on Appetizers.", Toast.LENGTH_SHORT).show()
-            //Log.w("home activity", "je suis passé par ici")
-            Log.i("info","end of Home Activity")
-            changeActivityWithCategory(str)
-
-        }
-        tvMainCourse.setOnClickListener {
-            val str: String = tvMainCourse.getText().toString()
-            // your code to perform when the user clicks on the TextView
-            Toast.makeText(this@HomeActivity, "You clicked on Main Dishes.", Toast.LENGTH_SHORT).show()
-            //Log.w("home activity", "je suis passé par ici")
-            Log.i("info","end of Home Activity")
-            changeActivityWithCategory(str)
-
-        }
-        tvDesserts.setOnClickListener {
-            val str :String = tvDesserts.getText().toString()
-            // your code to perform when the user clicks on the TextView
-            Toast.makeText(this@HomeActivity, "You clicked on Dessert.", Toast.LENGTH_SHORT).show()
-            //Log.w("home activity", "je suis passé par ici")
-            Log.i("info","end of Home Activity")
-            changeActivityWithCategory(str)
-
-
+        binding.appetizers.setOnClickListener {
+            //Toast.makeText(this, "Vous avez sélectionné : Menu d'entrées ", Toast.LENGTH_SHORT).show()
+            changeActivity(MealType.APPETIZERS)
+            Log.e("Closure tag", "Home Activity Closed")
         }
 
+        binding.mainCourses.setOnClickListener {
+            //Toast.makeText(this, "Vous avez sélectionné : Menu des plats principaux", Toast.LENGTH_SHORT).show()
+            changeActivity(MealType.MAIN_COURSES)
+            Log.e("Closure tag", "Home Activity Closed")
+        }
 
+        binding.desserts.setOnClickListener {
+            //Toast.makeText(this, "Vous avez sélectionné : Menu des desserts", Toast.LENGTH_SHORT).show()
+            changeActivity(MealType.DESSERTS)
+            Log.e("Closure tag", "Home Activity Closed")
+        }
 
     }
 
-
-    private fun changeActivityWithCategory(str : String) {
-
-
-        val monIntent : Intent =  Intent(this,DishActivity::class.java)
-        monIntent.putExtra("selectedCategory", str)
-        startActivity(monIntent)
-
-
+    private fun changeActivity (category: MealType){
+        val changePage = Intent(this, MealsActivity::class.java)
+        changePage.putExtra(MEALTYPE, category)
+        Log.i("INFO", "End of HomeActivity")
+        startActivity(changePage)
     }
-
-
-
-
-
-
-
+    companion object{
+        const val MEALTYPE= "MEALTYPE"
+    }
 }
-
-
