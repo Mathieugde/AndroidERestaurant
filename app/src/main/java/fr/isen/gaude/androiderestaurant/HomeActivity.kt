@@ -5,57 +5,40 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
-import fr.isen.gaude.androiderestaurant.Basket.BasketActivity
+import android.widget.Button
+import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import fr.isen.gaude.androiderestaurant.databinding.ActivityHomeBinding
 
-class HomeActivity : BaseActivity() {
-
+class HomeActivity : ToolActivity() {
     private lateinit var binding: ActivityHomeBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        val buttonEntries = binding.appetizersbtn
+        val buttonDishes = binding.maindishbtn
+        val buttonDeserts = binding.dessertbtn
 
-        setContentView(binding.root)
 
-        binding.appetizers.setOnClickListener {
-            //Toast.makeText(this, "Vous avez sélectionné : Menu d'entrées ", Toast.LENGTH_SHORT).show()
-            changeActivity(MealType.APPETIZERS)
-            Log.e("Closure tag", "Home Activity Closed")
+        buttonEntries.setOnClickListener {
+            changeActivity(getString(R.string.home_entries))
         }
-
-        binding.mainCourses.setOnClickListener {
-            //Toast.makeText(this, "Vous avez sélectionné : Menu des plats principaux", Toast.LENGTH_SHORT).show()
-            changeActivity(MealType.MAIN_COURSES)
-            Log.e("Closure tag", "Home Activity Closed")
+        buttonDishes.setOnClickListener {
+            changeActivity(getString(R.string.home_dishes))
         }
-
-        binding.desserts.setOnClickListener {
-            //Toast.makeText(this, "Vous avez sélectionné : Menu des desserts", Toast.LENGTH_SHORT).show()
-            changeActivity(MealType.DESSERTS)
-            Log.e("Closure tag", "Home Activity Closed")
-        }
-        binding.btnBasket.setOnClickListener(){
-            val count= getItemsCount()
-            if (count==0) {
-                Snackbar.make(binding.root, R.string.emptycart, Snackbar.LENGTH_LONG).show()
-            }else {
-                val intent = Intent(this, BasketActivity::class.java)
-                startActivity(intent)
-            }
+        buttonDeserts.setOnClickListener {
+            changeActivity(getString(R.string.home_deserts))
         }
 
     }
 
-    private fun changeActivity (category: MealType){
-        val changePage = Intent(this, MealsActivity::class.java)
-        changePage.putExtra(MEALTYPE, category)
+    private fun changeActivity(category: String) {
+        val changePage: Intent = Intent(this, DishesActivity::class.java)
+        changePage.putExtra("category_type", category)
         Log.i("INFO", "End of HomeActivity")
         startActivity(changePage)
-    }
-    companion object{
-        const val MEALTYPE= "MEALTYPE"
     }
 }

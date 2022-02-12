@@ -1,4 +1,4 @@
-package fr.isen.leclech.androiderestaurant
+package fr.isen.gaude.androiderestaurant
 
 import org.junit.Test
 

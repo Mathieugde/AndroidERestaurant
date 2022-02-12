@@ -1,4 +1,4 @@
-package fr.isen.leclech.androiderestaurant
+package fr.isen.gaude.androiderestaurant
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("fr.isen.leclech.androiderestaurant", appContext.packageName)
+        assertEquals("fr.isen.gaude.androiderestaurant", appContext.packageName)
     }
 }

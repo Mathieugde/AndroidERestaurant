@@ -4,80 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fond2__2_"
     tools:context=".HomeActivity">
 
     <Button
-        android:id="@+id/appetizers"
-        android:layout_width="131dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="224dp"
-        android:text="Entrées"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/desserts"
-        android:layout_width="131dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="12dp"
-        android:text="Desserts"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_courses" />
-
-    <Button
-        android:id="@+id/main_courses"
-        android:layout_width="131dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="20dp"
-        android:text="Plats"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appetizers" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/appetizersbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Bienvenue dans votre E-Restaurant"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#5CB14C"
+        android:text="@string/home_starters"
+        android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/appetizers"
+        app:cornerRadius="@null"
+        app:iconTint="@color/button_color"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toBottomOf="@+id/appTitle"
+        app:strokeColor="@color/teal_200" />
 
     <Button
-        android:id="@+id/btnBasket"
+        android:id="@+id/maindishbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="144dp"
-        android:text="Mon panier"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#5CB14C"
+        android:text="@string/home_dish"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:iconTint="@color/button_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appetizersbtn"
+        app:strokeColor="@color/teal_700" />
+
+    <Button
+        android:id="@+id/dessertbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#5CB14C"
+        android:text="@string/home_dessert"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maindishbtn"
+        app:strokeColor="@color/main2" />
+
+    <ImageView
+        android:id="@+id/appImage"
+        android:layout_width="86dp"
+        android:layout_height="74dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/appTitle"
+        android:layout_width="299dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053"
+        app:srcCompat="@drawable/titrelogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

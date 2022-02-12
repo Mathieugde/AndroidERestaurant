@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="fr.isen.gaude.androiderestaurant">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,18 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidERestaurant"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="n">
+        <activity
+            android:name=".OrderActivity"
+            android:exported="false" />
         <activity
             android:name=".ConnectionActivity"
             android:exported="false" />
         <activity
-            android:name=".Basket.BasketActivity"
+            android:name=".BasketActivity"
             android:exported="false" />
         <activity
-            android:name=".MealsActivity"
-            android:exported="false" />
+            android:name=".DetailActivity"
+            android:exported="false"
+            android:icon="@drawable/ic_launcher_foreground" />
         <activity
-            android:name=".Detail.DetailActivity"
+            android:name=".DishesActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
@@ -33,6 +40,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -1,10 +1,17 @@
 <resources>
-    <string name="app_name">AndroidERestaurant</string>
-    <string name="appetizer_1">1st Appetizer</string>
-    <string name="appetizer_2">2nd Appetizer</string>
-    <string name="appetizer_3">3rd Appetizer</string>
-    <string name="total">Total</string>
-    <string name="itemAdded">Votre plat a été ajouté au panier</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Gustatic Park</string>
+    <string name="home_starters">Entrées</string>
+    <string name="home_dish">Plats</string>
+    <string name="home_dessert">Desserts</string>
+    <string name="title3">"Gustatic Park "</string>
+    <string name="title4">Gustatic Park</string>
+    <string name="titleCo">Connection</string>
+    <string name="BasketTitle">Mon panier</string>
+    <string name="error">Saisie incorrecte</string>
+    <string name="home_entries">Entrées</string>
+    <string name="home_dishes">Plats</string>
+    <string name="home_deserts">Desserts</string>
+    <string name="connexion">Connexion</string>
+
+
 </resources>
